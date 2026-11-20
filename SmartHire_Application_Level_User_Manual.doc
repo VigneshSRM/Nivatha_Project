@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office" 
+      xmlns:w="urn:schemas-microsoft-com:office:word" 
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="utf-8">
+<title>SmartHire - Application Level User & Operations Manual</title>
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+  @page {
+    size: 8.5in 11.0in;
+    margin: 1.0in 1.0in 1.0in 1.0in;
+    mso-header-margin: 0.5in;
+    mso-footer-margin: 0.5in;
+  }
+  body {
+    font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #1e293b;
+    background-color: #ffffff;
+  }
+  h1 {
+    font-size: 22pt;
+    color: #0f172a;
+    font-weight: 800;
+    border-bottom: 3px solid #3b82f6;
+    padding-bottom: 8px;
+    margin-top: 24pt;
+    margin-bottom: 12pt;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 15pt;
+    color: #1e40af;
+    font-weight: 700;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 4px;
+    margin-top: 18pt;
+    margin-bottom: 8pt;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 12pt;
+    color: #334155;
+    font-weight: 600;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+    page-break-after: avoid;
+  }
+  p {
+    margin: 0 0 8pt 0;
+  }
+  ul, ol {
+    margin: 0 0 10pt 20pt;
+  }
+  li {
+    margin-bottom: 5pt;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12pt 0;
+    font-size: 10pt;
+  }
+  th {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    font-weight: 700;
+    border: 1px solid #cbd5e1;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  td {
+    border: 1px solid #e2e8f0;
+    padding: 8px 10px;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td {
+    background-color: #f8fafc;
+  }
+  .callout {
+    background-color: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 10pt 14pt;
+    margin: 12pt 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout-title {
+    font-weight: 700;
+    color: #1d4ed8;
+    margin-bottom: 4pt;
+  }
+  .callout-success {
+    background-color: #f0fdf4;
+    border-left-color: #22c55e;
+  }
+  .callout-success .callout-title {
+    color: #15803d;
+  }
+  .callout-warning {
+    background-color: #fffbeb;
+    border-left-color: #f59e0b;
+  }
+  .callout-warning .callout-title {
+    color: #b45309;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 8.5pt;
+    font-weight: 700;
+    border-radius: 12px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background-color: #dbeafe; color: #1e40af; }
+  .badge-green { background-color: #dcfce7; color: #166534; }
+  .badge-amber { background-color: #fef3c7; color: #92400e; }
+  .badge-purple { background-color: #f3e8ff; color: #6b21a8; }
+  .badge-red { background-color: #fee2e2; color: #991b1b; }
+  .step-box {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10pt 12pt;
+    margin-bottom: 10pt;
+    background-color: #ffffff;
+  }
+  .step-num {
+    font-weight: 800;
+    color: #3b82f6;
+    font-size: 12pt;
+    margin-bottom: 4pt;
+  }
+  .cover-page {
+    text-align: center;
+    padding: 50pt 20pt 40pt 20pt;
+    border-bottom: 3px solid #3b82f6;
+    margin-bottom: 30pt;
+  }
+  .cover-title {
+    font-size: 32pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 8pt;
+  }
+  .cover-subtitle {
+    font-size: 16pt;
+    color: #3b82f6;
+    font-weight: 600;
+    margin-bottom: 20pt;
+  }
+  .cover-meta {
+    font-size: 10.5pt;
+    color: #64748b;
+    margin-top: 30pt;
+    line-height: 1.8;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover-page">
+  <div class="cover-title">⚡ SmartHire Job Portal</div>
+  <div class="cover-subtitle">Application-Level User Manual &amp; Operational Guide</div>
+  <p style="font-size: 12pt; color: #475569; max-width: 650px; margin: 0 auto;">
+    A complete guide detailing how the application functions, how each feature is operated, user journeys for Job Seekers and Employers, and end-to-end recruitment workflows.
+  </p>
+  <div class="cover-meta">
+    <strong>Document Type:</strong> Application-Level Functional Manual &bull; 
+    <strong>Version:</strong> 1.0.0<br>
+    <strong>Target Audience:</strong> Users, Project Evaluators, Hiring Managers, Job Seekers &bull; 
+    <strong>Status:</strong> Active &amp; Verified
+  </div>
+</div>
+
+<h1>1. Introduction to the SmartHire Application</h1>
+<p>
+  <strong>SmartHire</strong> is a comprehensive digital recruitment portal designed to connect career-seeking professionals with corporate hiring teams. The platform automates the modern recruitment lifecycle &mdash; from publishing open vacancies and discovering matching opportunities to submitting applications and managing the multi-stage candidate hiring pipeline.
+</p>
+
+<h3>Core Objectives of the System:</h3>
+<ul>
+  <li><strong>For Job Seekers:</strong> Eliminates fragmented job search friction by providing instant keyword searches, category browsing, multi-criteria filtering, 1-click application submissions, and live tracking of recruitment stages.</li>
+  <li><strong>For Employers:</strong> Provides a streamlined hiring console to publish vacancies, manage active listings, review candidate resumes, and update application stages from review to final hiring.</li>
+  <li><strong>Security &amp; Privacy:</strong> Protects candidate contact details and resumes, isolates employer postings, and provides encrypted authentication.</li>
+</ul>
+
+<h1>2. How the Application Works (High-Level Working Principle)</h1>
+<p>
+  The SmartHire application operates through a seamless, collaborative flow between two primary user roles:
+</p>
+
+<table style="margin-top: 14pt;">
+  <thead>
+    <tr>
+      <th style="width: 25%;">User Role</th>
+      <th style="width: 35%;">Primary Purpose</th>
+      <th style="width: 40%;">Key Actions Available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>🎓 Job Seeker</strong></td>
+      <td>Individual seeking employment opportunities.</td>
+      <td>
+        &bull; Search &amp; filter active job postings.<br>
+        &bull; Read comprehensive job specifications.<br>
+        &bull; Submit applications with custom cover letters &amp; resumes.<br>
+        &bull; Track application progress (Pending &rarr; Reviewed &rarr; Shortlisted &rarr; Hired).<br>
+        &bull; Build professional candidate profile.
+      </td>
+    </tr>
+    <tr>
+      <td><strong>🏢 Employer</strong></td>
+      <td>Company representative or recruiter hiring talent.</td>
+      <td>
+        &bull; Post new job vacancies with detailed requirements &amp; salary ranges.<br>
+        &bull; Manage published listings (Edit / Delete).<br>
+        &bull; Review applicants per job.<br>
+        &bull; Update candidate hiring stages with automated notifications.<br>
+        &bull; Monitor recruitment analytics on the Employer Dashboard.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-success">
+  <div class="callout-title">The Complete Recruitment Lifecycle</div>
+  <strong>1. Post Job:</strong> Employer publishes a vacancy with title, salary, skills, and deadline.<br>
+  <strong>2. Discover:</strong> Job Seeker browses or searches the job on Home or Jobs catalog.<br>
+  <strong>3. Apply:</strong> Seeker submits application with cover letter and resume link.<br>
+  <strong>4. Notify:</strong> Employer receives instant in-app notification of the new submission.<br>
+  <strong>5. Review &amp; Stage Update:</strong> Employer inspects application and updates status to <em>Reviewed</em>, <em>Shortlisted</em>, or <em>Hired</em>.<br>
+  <strong>6. Track:</strong> Job Seeker sees live status update in their "My Applications" dashboard.
+</div>
+
+<h1>3. Application Access &amp; Authentication Flow</h1>
+
+<h2>3.1 First-Time App Entry &amp; Protected Login Screen</h2>
+<p>
+  When any visitor opens the application URL (<code>http://localhost:5173/</code>), the system immediately performs a security check:
+</p>
+<ol>
+  <li><strong>Unauthenticated Visit:</strong> If the user is not currently logged in, the system automatically redirects them to the <strong>Login Page</strong> (<code>/login</code>).</li>
+  <li><strong>Clean Authentication Header:</strong> The navigation bar displays only the <strong>⚡ SmartHire</strong> branding along with <em>Login</em> and <em>Get Started</em> options. Protected navigation items (Home, Jobs, Dashboard) remain hidden until login.</li>
+  <li><strong>Signing In:</strong> The user enters their registered <em>Email Address</em> and <em>Password</em> (with an optional show/hide password toggle).</li>
+  <li><strong>Direct Landing on Home:</strong> Upon successful verification, the system welcomes the user with a notification toast and navigates them directly to the <strong>Home Page</strong>.</li>
+</ol>
+
+<h2>3.2 Creating an Account (Registration Flow)</h2>
+<p>
+  If the visitor does not yet have an account, clicking <strong>"Create Account"</strong> opens the dual-role registration screen (<code>/register</code>):
+</p>
+
+<div class="step-box">
+  <div class="step-num">Step 1: Role Selection</div>
+  <p>The user selects their role using visual toggle cards:</p>
+  <ul>
+    <li><strong>🎓 Job Seeker:</strong> Configures the account for job discovery and applications.</li>
+    <li><strong>🏢 Employer:</strong> Configures the account for job posting and talent management.</li>
+  </ul>
+</div>
+
+<div class="step-box">
+  <div class="step-num">Step 2: Dynamic Form Completion</div>
+  <ul>
+    <li><strong>Full Name:</strong> Candidate's personal name or Recruiter's name.</li>
+    <li><strong>Company Name:</strong> (Shown dynamically only if <em>Employer</em> is selected).</li>
+    <li><strong>Email Address:</strong> Unique login email.</li>
+    <li><strong>Password:</strong> Secure password (minimum 6 characters required).</li>
+  </ul>
+</div>
+
+<div class="step-box">
+  <div class="step-num">Step 3: Immediate Activation</div>
+  <p>Clicking <strong>"Create Account &rarr;"</strong> instantly activates the profile, stores secure credentials, and takes the user directly to the Home page ready to start using the platform.</p>
+</div>
+
+<h1>4. Job Seeker Module &mdash; Step-by-Step Functional Walkthrough</h1>
+
+<h2>4.1 Home Screen (Career Discovery Hub)</h2>
+<p>
+  Once logged in, the user sees the comprehensive SmartHire Home Screen:
+</p>
+<ul>
+  <li><strong>Hero Search Bar:</strong> Users can type any job title, company name, or technology skill (e.g., <em>React Developer</em>, <em>Python</em>, <em>UI/UX</em>) and press <strong>Search Jobs</strong> to jump directly to filtered results.</li>
+  <li><strong>Popular Keywords:</strong> Quick-click suggestion chips for in-demand roles.</li>
+  <li><strong>Platform Metrics Counter:</strong> Live counters displaying platform scale (<em>50K+ Jobs</em>, <em>20K+ Companies</em>, <em>500K+ Job Seekers</em>, <em>95% Success Rate</em>).</li>
+  <li><strong>Industry Categories Grid:</strong> Visual category tiles with icons (<em>Technology &bull; Finance &bull; Design &bull; Marketing &bull; Healthcare &bull; Education &bull; Engineering</em>). Clicking any category filters jobs immediately.</li>
+  <li><strong>How SmartHire Works Section:</strong> 3-step illustrated educational guide (<em>01 Create Profile &rarr; 02 Search &amp; Apply &rarr; 03 Get Hired</em>).</li>
+  <li><strong>Action Callout (CTA):</strong> Provides direct access to <em>Explore Jobs</em> and <em>My Dashboard</em>.</li>
+</ul>
+
+<h2>4.2 Finding Jobs with Multi-Filter Search</h2>
+<p>
+  Navigating to <strong>"Find Jobs"</strong> (<code>/jobs</code>) opens the full interactive catalog:
+</p>
+<ul>
+  <li><strong>Keyword Search:</strong> Instant text search across job titles, company names, and descriptions.</li>
+  <li><strong>Category Filter:</strong> Dropdown to filter by domain (e.g., Technology, Design, Healthcare).</li>
+  <li><strong>Job Type Filter:</strong> Select between <em>Full-Time</em>, <em>Part-Time</em>, <em>Remote</em>, <em>Internship</em>, or <em>Contract</em>.</li>
+  <li><strong>Location Filter:</strong> Type city or region (e.g., <em>Bangalore</em>, <em>Chennai</em>, <em>Remote</em>).</li>
+  <li><strong>Job Cards:</strong> Each card displays the job title, company name, location, job type badge, salary range, date posted, and a <strong>View Details &rarr;</strong> button.</li>
+  <li><strong>Pagination:</strong> Seamlessly browse across pages when dozens of jobs are active.</li>
+</ul>
+
+<h2>4.3 Inspecting Job Details</h2>
+<p>
+  Clicking on any job card opens the dedicated <strong>Job Details Screen</strong> (<code>/jobs/:id</code>):
+</p>
+<ul>
+  <li><strong>Job Overview:</strong> Title, company name, location, salary range (e.g., <em>₹6,00,000 - ₹12,00,000 / yr</em>), and application deadline.</li>
+  <li><strong>Detailed Job Description:</strong> Comprehensive breakdown of daily responsibilities and company mission.</li>
+  <li><strong>Candidate Requirements:</strong> List of prerequisites, qualifications, and experience expectations.</li>
+  <li><strong>Required Skills:</strong> Interactive skill tags (e.g., <code>React</code>, <code>Node.js</code>, <code>MySQL</code>, <code>REST API</code>).</li>
+  <li><strong>Company Sidebar:</strong> Overview of hiring organization, industry, website, and company size.</li>
+  <li><strong>View Counter:</strong> Displays total times the job posting has been viewed by candidates.</li>
+</ul>
+
+<h2>4.4 Submitting an Application</h2>
+<ol>
+  <li>On the Job Details screen, click the prominent <strong>"Apply Now"</strong> button.</li>
+  <li>The <strong>Job Application Modal</strong> opens on screen.</li>
+  <li><strong>Cover Letter:</strong> The candidate types a message introducing themselves and highlighting why they are the ideal fit for the vacancy.</li>
+  <li><strong>Resume Link:</strong> The candidate pastes the URL to their online resume, Google Drive CV link, or portfolio.</li>
+  <li>Click <strong>"Submit Application"</strong>:
+    <ul>
+      <li>The application is saved with initial status <span class="badge badge-amber">Pending</span>.</li>
+      <li>The system automatically prevents duplicate submissions &mdash; if the candidate has already applied, an alert confirms they are already registered.</li>
+      <li>The employer is automatically notified of the new application.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2>4.5 Tracking Status in "My Applications"</h2>
+<p>
+  Job Seekers can monitor every application in real time under <strong>"My Applications"</strong> (<code>/applications</code>):
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 20%;">Stage Badge</th>
+      <th style="width: 30%;">Status Meaning</th>
+      <th style="width: 50%;">Candidate Next Step</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="badge badge-amber">Pending</span></td>
+      <td>Application submitted; awaiting employer review.</td>
+      <td>No action needed; application is in the employer's screening queue.</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-blue">Reviewed</span></td>
+      <td>Employer has opened and inspected resume/cover letter.</td>
+      <td>Profile is actively being evaluated by the hiring team.</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-purple">Shortlisted</span></td>
+      <td>Candidate passed screening and is selected for interview rounds.</td>
+      <td>Expect contact from the employer via email/phone for interviews.</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-green">Hired</span></td>
+      <td>Final selection confirmed; job offer extended!</td>
+      <td>Congratulations &mdash; candidate has landed the position!</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-red">Rejected</span></td>
+      <td>Application not selected for this specific opening.</td>
+      <td>Candidate can explore and apply for other suitable openings on the platform.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4.6 Candidate Profile Builder</h2>
+<p>
+  Under <strong>"Profile"</strong> (<code>/profile</code>), job seekers can keep their professional resume up-to-date:
+</p>
+<ul>
+  <li><strong>Headline:</strong> Professional title (e.g., <em>Full Stack Developer | React &amp; Node.js</em>).</li>
+  <li><strong>Bio:</strong> Professional summary and career passions.</li>
+  <li><strong>Skills:</strong> Comma-separated technical skills.</li>
+  <li><strong>Experience:</strong> Total years in the industry.</li>
+  <li><strong>Education:</strong> Degree and university details.</li>
+  <li><strong>Online Links:</strong> Direct links to LinkedIn profile and GitHub / portfolio website.</li>
+</ul>
+
+<h1>5. Employer Module &mdash; Step-by-Step Functional Walkthrough</h1>
+
+<h2>5.1 Employer Dashboard (Recruiter Command Center)</h2>
+<p>
+  When an employer logs into SmartHire, their dedicated <strong>Dashboard</strong> (<code>/dashboard</code>) presents actionable hiring metrics:
+</p>
+<ul>
+  <li><strong>Active Job Listings:</strong> Total number of open vacancies currently visible to candidates.</li>
+  <li><strong>Total Applications Received:</strong> Cumulative count of candidate submissions across all listings.</li>
+  <li><strong>Pending Reviews:</strong> Count of new candidates awaiting recruiter screening.</li>
+  <li><strong>Job Performance Overview:</strong> Live listing of each vacancy with total views and application counts.</li>
+</ul>
+
+<h2>5.2 Publishing a New Job Vacancy</h2>
+<p>
+  Recruiters click <strong>"Post Job"</strong> in the navigation bar to launch the vacancy publishing wizard:
+</p>
+
+<div class="step-box">
+  <div class="step-num">Step 1: Role Overview</div>
+  <p>Enter <strong>Job Title</strong> (e.g., <em>Senior Frontend Engineer</em>), <strong>Category</strong> (e.g., <em>Technology</em>), <strong>Job Type</strong> (<em>Full-Time / Part-Time / Remote / Internship</em>), and <strong>Location</strong> (e.g., <em>Bangalore, India</em>).</p>
+</div>
+
+<div class="step-box">
+  <div class="step-num">Step 2: Compensation &amp; Qualifications</div>
+  <p>Specify <strong>Minimum Salary</strong> and <strong>Maximum Salary</strong> per year (e.g., ₹8,00,000 - ₹15,00,000), <strong>Experience Required</strong> (e.g., <em>3-5 years</em>), and <strong>Education Required</strong> (e.g., <em>B.Tech / MCA or equivalent</em>).</p>
+</div>
+
+<div class="step-box">
+  <div class="step-num">Step 3: Detailed Specifications</div>
+  <p>Draft the full <strong>Job Description</strong>, <strong>Key Responsibilities</strong>, <strong>Requirements</strong>, and <strong>Required Skills</strong> (e.g., <code>React, JavaScript, TypeScript, Tailwind CSS</code>).</p>
+</div>
+
+<div class="step-box">
+  <div class="step-num">Step 4: Publishing</div>
+  <p>Click <strong>"Publish Job &rarr;"</strong>. The vacancy is immediately active, searchable on the homepage, and open for candidate applications.</p>
+</div>
+
+<h2>5.3 Reviewing Candidates &amp; Managing the Hiring Pipeline</h2>
+<p>
+  When candidates apply, recruiters navigate to <strong>"Applicants"</strong> (<code>/applications</code>):
+</p>
+<ol>
+  <li><strong>Job Selector:</strong> Choose which job vacancy to inspect applicants for.</li>
+  <li><strong>Candidate List:</strong> Displays applicant names, email addresses, phone numbers, and application dates.</li>
+  <li><strong>Resume &amp; Cover Letter Review:</strong> Click candidate card to read their cover letter and click their resume link to inspect full credentials.</li>
+  <li><strong>Interactive Status Changer:</strong> Click any status button to progress the candidate:
+    <ul>
+      <li>Click <span class="badge badge-amber">Reviewed</span> when candidate credentials have been screened.</li>
+      <li>Click <span class="badge badge-blue">Shortlisted</span> to advance candidate to interview stages.</li>
+      <li>Click <span class="badge badge-green">Hired</span> upon successful offer acceptance.</li>
+      <li>Click <span class="badge badge-red">Rejected</span> if credentials do not match expectations.</li>
+    </ul>
+  </li>
+  <li><strong>Automatic Candidate Alert:</strong> The moment a recruiter updates the status pill, an automated alert updates the candidate's tracking view.</li>
+</ol>
+
+<h2>5.4 Company Branding &amp; Profile</h2>
+<p>
+  Under <strong>"Profile"</strong>, employers configure their company identity:
+</p>
+<ul>
+  <li>Company Legal Name and Logo URL.</li>
+  <li>Industry sector (e.g., <em>Information Technology</em>, <em>Fintech</em>, <em>E-Commerce</em>).</li>
+  <li>Corporate Website URL and Company Size (e.g., <em>50-200 Employees</em>).</li>
+  <li>Company Overview and Culture description (displayed to all job seekers on job detail pages).</li>
+</ul>
+
+<h1>6. Navigation &amp; Security Controls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User State</th>
+      <th>Visible Navigation Links</th>
+      <th>Header Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Logged Out</strong><br>(Guest Visitor)</td>
+      <td>None (Nav links hidden for clean auth focus)</td>
+      <td>
+        <span class="badge badge-blue">Login</span> &bull; 
+        <span class="badge badge-green">Get Started</span>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Logged In</strong><br>(Job Seeker)</td>
+      <td>
+        &bull; <strong>Home</strong> (<code>/</code>)<br>
+        &bull; <strong>Find Jobs</strong> (<code>/jobs</code>)<br>
+        &bull; <strong>Dashboard</strong> (<code>/dashboard</code>)<br>
+        &bull; <strong>My Applications</strong> (<code>/applications</code>)
+      </td>
+      <td>
+        Candidate First Name &bull; 
+        <span class="badge badge-amber">Profile</span> &bull; 
+        <span class="badge badge-red">Logout</span>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Logged In</strong><br>(Employer)</td>
+      <td>
+        &bull; <strong>Home</strong> (<code>/</code>)<br>
+        &bull; <strong>Find Jobs</strong> (<code>/jobs</code>)<br>
+        &bull; <strong>Dashboard</strong> (<code>/dashboard</code>)<br>
+        &bull; <strong>Applicants</strong> (<code>/applications</code>)<br>
+        &bull; <strong>Post Job</strong> (<code>/post-job</code>)
+      </td>
+      <td>
+        Recruiter Name &bull; 
+        <span class="badge badge-amber">Profile</span> &bull; 
+        <span class="badge badge-red">Logout</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <strong>Secure Logout Flow:</strong> Clicking <strong>Logout</strong> completely flushes authentication tokens from browser storage, terminates the session, and redirects immediately to the <strong>Login Page</strong>.
+</p>
+
+<h1>7. How to Start and Run the Application (Complete Execution Guide)</h1>
+
+<div class="step-box">
+  <div class="step-num">Step 1: Start XAMPP MySQL Database</div>
+  <ol>
+    <li>Launch the <strong>XAMPP Control Panel</strong> on Windows.</li>
+    <li>Click <strong>Start</strong> next to <strong>MySQL</strong> (confirm green status indicator).</li>
+    <li>Open browser at <code>http://localhost/phpmyadmin</code>.</li>
+    <li>Create database named <code>smarthire_db</code>.</li>
+    <li>Go to the SQL tab, paste the code from <code>backend/config/schema.sql</code>, and click <strong>Go</strong> to generate all tables.</li>
+  </ol>
+</div>
+
+<div class="step-box">
+  <div class="step-num">Step 2: Launch the Backend API Server</div>
+  <ol>
+    <li>Open a PowerShell terminal in the project directory.</li>
+    <li>Run the following commands:
+      <pre><code>cd backend
+npm start</code></pre>
+    </li>
+    <li>Verify startup message:
+      <pre><code>🚀 SmartHire Server running on http://localhost:5000
+✅ MySQL Connected Successfully!</code></pre>
+    </li>
+  </ol>
+</div>
+
+<div class="step-box">
+  <div class="step-num">Step 3: Launch the Frontend Web Application</div>
+  <ol>
+    <li>Open a second PowerShell terminal in the project directory.</li>
+    <li>Run the following commands:
+      <pre><code>cd frontend
+npm run dev</code></pre>
+    </li>
+    <li>Console confirms:
+      <pre><code>➜  Local:   http://localhost:5173/</code></pre>
+    </li>
+  </ol>
+</div>
+
+<div class="step-box">
+  <div class="step-num">Step 4: Use the Application</div>
+  <ol>
+    <li>Open browser and visit: <code>http://localhost:5173</code></li>
+    <li>The <strong>Login Page</strong> will appear automatically.</li>
+    <li>Sign in or click <strong>Create Account</strong> to register as a <strong>Job Seeker</strong> or <strong>Employer</strong> and start using the portal!</li>
+  </ol>
+</div>
+
+<h1>8. Frequently Asked Questions (FAQ)</h1>
+
+<h3>Q1: Why does the Login Page show up first when opening the website?</h3>
+<p>
+  <strong>Answer:</strong> The platform enforces a secure user experience. Guest visitors must authenticate or create an account first so their personalized dashboard, role-specific navigation, and application history can be loaded accurately.
+</p>
+
+<h3>Q2: Can an Employer apply for jobs?</h3>
+<p>
+  <strong>Answer:</strong> No. Role-Based Access Control (RBAC) ensures only registered <strong>Job Seekers</strong> can submit applications. Employers receive an access notification if attempting to apply.
+</p>
+
+<h3>Q3: What happens if a user submits an application twice for the same job?</h3>
+<p>
+  <strong>Answer:</strong> The system enforces a unique database constraint on candidate and job IDs. Duplicate submissions are automatically prevented with a clear message: <em>"You have already applied for this job."</em>
+</p>
+
+<h3>Q4: How long does a user stay logged in?</h3>
+<p>
+  <strong>Answer:</strong> User sessions are secured with JSON Web Tokens (JWT) valid for 7 days. If a token expires, the application automatically clears storage and prompts a re-login.
+</p>
+
+</body>
+</html>

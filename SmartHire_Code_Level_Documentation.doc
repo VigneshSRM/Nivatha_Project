@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office" 
+      xmlns:w="urn:schemas-microsoft-com:office:word" 
+      xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="utf-8">
+<title>SmartHire - Code Level Documentation</title>
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+  @page {
+    size: 8.5in 11.0in;
+    margin: 1.0in 1.0in 1.0in 1.0in;
+    mso-header-margin: 0.5in;
+    mso-footer-margin: 0.5in;
+  }
+  body {
+    font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #1e293b;
+    background-color: #ffffff;
+  }
+  h1 {
+    font-size: 24pt;
+    color: #0f172a;
+    font-weight: 800;
+    border-bottom: 3px solid #3b82f6;
+    padding-bottom: 8px;
+    margin-top: 24pt;
+    margin-bottom: 12pt;
+    page-break-after: avoid;
+  }
+  h2 {
+    font-size: 16pt;
+    color: #1e40af;
+    font-weight: 700;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 4px;
+    margin-top: 18pt;
+    margin-bottom: 8pt;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 13pt;
+    color: #334155;
+    font-weight: 600;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+    page-break-after: avoid;
+  }
+  h4 {
+    font-size: 11pt;
+    color: #475569;
+    font-weight: 600;
+    margin-top: 10pt;
+    margin-bottom: 4pt;
+  }
+  p {
+    margin: 0 0 8pt 0;
+  }
+  ul, ol {
+    margin: 0 0 10pt 20pt;
+  }
+  li {
+    margin-bottom: 4pt;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12pt 0;
+    font-size: 10pt;
+  }
+  th {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    font-weight: 700;
+    border: 1px solid #cbd5e1;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  td {
+    border: 1px solid #e2e8f0;
+    padding: 7px 10px;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td {
+    background-color: #f8fafc;
+  }
+  code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 9.5pt;
+    background-color: #f1f5f9;
+    color: #0369a1;
+    padding: 2px 5px;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+  }
+  pre {
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 9.5pt;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin: 10pt 0;
+    overflow-x: auto;
+    line-height: 1.45;
+  }
+  pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border: none;
+  }
+  .callout {
+    background-color: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 10pt 14pt;
+    margin: 12pt 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout-title {
+    font-weight: 700;
+    color: #1d4ed8;
+    margin-bottom: 4pt;
+  }
+  .callout-success {
+    background-color: #f0fdf4;
+    border-left-color: #22c55e;
+  }
+  .callout-success .callout-title {
+    color: #15803d;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 8.5pt;
+    font-weight: 700;
+    border-radius: 12px;
+    text-transform: uppercase;
+  }
+  .badge-blue { background-color: #dbeafe; color: #1e40af; }
+  .badge-green { background-color: #dcfce7; color: #166534; }
+  .badge-amber { background-color: #fef3c7; color: #92400e; }
+  .cover-page {
+    text-align: center;
+    padding: 40pt 20pt 30pt 20pt;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 30pt;
+  }
+  .cover-title {
+    font-size: 32pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 10pt;
+  }
+  .cover-subtitle {
+    font-size: 16pt;
+    color: #3b82f6;
+    font-weight: 600;
+    margin-bottom: 20pt;
+  }
+  .cover-meta {
+    font-size: 11pt;
+    color: #64748b;
+    margin-top: 20pt;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover-page">
+  <div class="cover-title">⚡ SmartHire Job Portal</div>
+  <div class="cover-subtitle">Code-Level Architecture, Implementation & Operations Manual</div>
+  <p style="font-size: 12pt; color: #475569; max-width: 600px; margin: 0 auto;">
+    A comprehensive guide detailing internal code logic, component lifecycles, database transactions, REST API mechanics, and end-to-end user workflows.
+  </p>
+  <div class="cover-meta">
+    <strong>Author:</strong> Engineering Team &bull; 
+    <strong>Version:</strong> 1.0.0 &bull; 
+    <strong>Stack:</strong> React 19 + Node.js Express + MySQL2
+  </div>
+</div>
+
+<h1>1. Executive Architecture & System Paradigm</h1>
+<p>
+  <strong>SmartHire</strong> is engineered as a decoupled, three-tier client-server application adhering to modern RESTful paradigms and single-page application (SPA) state lifecycles.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 25%;">Tier</th>
+      <th style="width: 35%;">Technologies</th>
+      <th style="width: 40%;">Core Responsibilities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Presentation Tier</strong><br>(Frontend)</td>
+      <td>React 19, Vite 8, React Router DOM v7, Axios, React Hot Toast</td>
+      <td>Client-side routing, protected route enforcement, JWT credential storage, dynamic DOM rendering, controlled form validation.</td>
+    </tr>
+    <tr>
+      <td><strong>Application Tier</strong><br>(Backend)</td>
+      <td>Node.js 24, Express 4, jsonwebtoken, bcryptjs, multer, cors</td>
+      <td>RESTful API endpoints, JWT token verification, role-based access control (RBAC), SQL parameterized query orchestration, payload validation.</td>
+    </tr>
+    <tr>
+      <td><strong>Data Persistence Tier</strong><br>(Database)</td>
+      <td>MySQL 8, mysql2 connection pool (Port 3306)</td>
+      <td>Relational data modeling, foreign key constraints with cascading deletes, indexing, stateful application tracking.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout callout-success">
+  <div class="callout-title">Stateless Authentication Model</div>
+  The application utilizes completely stateless JWT authentication. User sessions are verified on every single API request using signed cryptographic tokens passed via the <code>Authorization: Bearer &lt;token&gt;</code> header. No server-side session memory or sticky sessions are required.
+</div>
+
+<h1>2. Code-Level Backend Architecture & Logic Breakdown</h1>
+
+<h2>2.1 server.js (Express Entry Point)</h2>
+<p>
+  The file <code>backend/server.js</code> configures the central Express application, middleware chain, and route mounting.
+</p>
+<ul>
+  <li><strong>Environment Initialization:</strong> Resolves <code>.env</code> using <code>path.join(__dirname, '.env')</code> to ensure variables are always loaded regardless of the execution working directory.</li>
+  <li><strong>CORS Hardening:</strong> Configured with <code>origin: 'http://localhost:5173'</code> and <code>credentials: true</code> to permit secure cookie and auth header exchanges exclusively with the Vite frontend.</li>
+  <li><strong>Payload Parsers:</strong> <code>express.json()</code> and <code>express.urlencoded({ extended: true })</code> parse JSON and URL-encoded HTTP request bodies.</li>
+  <li><strong>Static File Serving:</strong> <code>app.use('/uploads', express.static('uploads'))</code> serves uploaded resumes and company logos.</li>
+  <li><strong>Router Registration:</strong>
+    <ul>
+      <li><code>app.use('/api/auth', authRoutes)</code> &mdash; Authentication & user session management</li>
+      <li><code>app.use('/api/jobs', jobRoutes)</code> &mdash; Job discovery, creation, updates & bookmarks</li>
+      <li><code>app.use('/api/applications', applicationRoutes)</code> &mdash; Job applications and hiring pipeline</li>
+      <li><code>app.use('/api/users', userRoutes)</code> &mdash; Seeker/employer profiles & dashboard metrics</li>
+    </ul>
+  </li>
+  <li><strong>Centralized Error Handling:</strong> Intercepts uncaught errors and formats a uniform JSON response <code>{ message: 'Internal server error', error: err.message }</code> with status code 500.</li>
+</ul>
+
+<h2>2.2 config/db.js (MySQL Connection Pool)</h2>
+<p>
+  SmartHire connects to MySQL using the <code>mysql2</code> promise wrapper:
+</p>
+<pre><code>const mysql = require('mysql2');
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
+
+const pool = mysql.createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+});
+
+const db = pool.promise();</code></pre>
+<p>
+  <strong>Why Connection Pooling?</strong> Instead of opening and tearing down a TCP handshake for every database query, <code>createPool</code> manages up to 10 persistent connections. If all 10 are active, incoming queries wait in a non-blocking queue (<code>waitForConnections: true</code>), significantly optimizing query throughput and latency.
+</p>
+
+<h2>2.3 middleware/auth.middleware.js (JWT & RBAC Guards)</h2>
+<p>This module provides three critical security middlewares:</p>
+<ol>
+  <li><strong>verifyToken:</strong>
+    <ul>
+      <li>Extracts header: <code>const token = req.headers['authorization']?.split(' ')[1];</code></li>
+      <li>If token is missing, terminates request immediately with <code>401 Unauthorized</code>: <em>"Access denied. No token provided."</em></li>
+      <li>Verifies cryptographic signature with <code>jwt.verify(token, process.env.JWT_SECRET)</code>.</li>
+      <li>Attaches decoded user token payload (<code>{ id, email, role }</code>) directly to <code>req.user</code>.</li>
+      <li>If invalid or expired, catches error and returns <code>403 Forbidden</code>: <em>"Invalid or expired token."</em></li>
+    </ul>
+  </li>
+  <li><strong>isEmployer:</strong>
+    <ul>
+      <li>Inspects <code>req.user.role</code>.</li>
+      <li>Allows execution to proceed if <code>role === 'employer' || role === 'admin'</code>; otherwise terminates with <code>403 Forbidden</code>: <em>"Access denied. Employers only."</em></li>
+    </ul>
+  </li>
+  <li><strong>isAdmin:</strong>
+    <ul>
+      <li>Restricts access exclusively to users with <code>role === 'admin'</code>.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2>2.4 routes/auth.routes.js (Authentication Controllers)</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Endpoint</th>
+      <th>Method</th>
+      <th>Access</th>
+      <th>Code Logic & DB Transactions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>/api/auth/register</code></td>
+      <td><span class="badge badge-green">POST</span></td>
+      <td>Public</td>
+      <td>
+        1. Validates that <code>full_name</code>, <code>email</code>, <code>password</code>, and <code>role</code> are present.<br>
+        2. Queries <code>SELECT id FROM users WHERE email = ?</code>; if found, rejects with <code>409 Conflict</code>.<br>
+        3. Hashes password: <code>await bcrypt.hash(password, 10)</code>.<br>
+        4. Inserts user into <code>users</code> table.<br>
+        5. <strong>Auto-Bootstrapping:</strong> If <code>role === 'employer'</code>, inserts into <code>employer_profiles</code> with <code>company_name</code>. If <code>role === 'jobseeker'</code>, inserts into <code>seeker_profiles</code>.<br>
+        6. Signs JWT: <code>jwt.sign({ id, email, role }, JWT_SECRET, { expiresIn: '7d' })</code> and returns status 201.
+      </td>
+    </tr>
+    <tr>
+      <td><code>/api/auth/login</code></td>
+      <td><span class="badge badge-blue">POST</span></td>
+      <td>Public</td>
+      <td>
+        1. Validates email and password presence.<br>
+        2. Queries <code>SELECT * FROM users WHERE email = ?</code>.<br>
+        3. Compares password hash via <code>await bcrypt.compare(password, user.password)</code>.<br>
+        4. If matched, generates signed JWT and returns user object (excluding password hash).
+      </td>
+    </tr>
+    <tr>
+      <td><code>/api/auth/me</code></td>
+      <td><span class="badge badge-amber">GET</span></td>
+      <td>Private</td>
+      <td>
+        Protected by <code>verifyToken</code>. Queries <code>users</code> by <code>req.user.id</code> and returns user profile. Used for client-side session hydration.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>2.5 routes/job.routes.js (Job Discovery & Management)</h2>
+<ul>
+  <li><strong>GET /api/jobs:</strong> Dynamic multi-parameter SQL query builder:
+    <pre><code>let query = `SELECT j.*, u.full_name AS employer_name, ep.company_name, ep.company_logo
+             FROM jobs j JOIN users u ON j.employer_id = u.id
+             LEFT JOIN employer_profiles ep ON u.id = ep.user_id WHERE j.status = 'active'`;
+if (search) query += ` AND (j.title LIKE ? OR j.description LIKE ? OR ep.company_name LIKE ?)`;
+if (category) query += ` AND j.category = ?`;
+if (job_type) query += ` AND j.job_type = ?`;
+if (location) query += ` AND j.location LIKE ?`;
+query += ` ORDER BY j.created_at DESC LIMIT ? OFFSET ?`;</code></pre>
+    Calculates total count and returns paginated result: <code>{ jobs, pagination: { total, page, limit, pages } }</code>.
+  </li>
+  <li><strong>GET /api/jobs/:id:</strong> Increments view count atomically: <code>UPDATE jobs SET views = views + 1 WHERE id = ?</code> and retrieves full job details.</li>
+  <li><strong>POST /api/jobs:</strong> Protected by <code>verifyToken</code> and <code>isEmployer</code>. Inserts new job listing with status <code>active</code>.</li>
+  <li><strong>PUT /api/jobs/:id & DELETE /api/jobs/:id:</strong> Enforces ownership validation: <code>employer_id = req.user.id</code> so employers cannot modify or delete jobs posted by other companies.</li>
+  <li><strong>POST /api/jobs/:id/save:</strong> Toggles bookmarks in <code>saved_jobs</code> table. Checks if already saved; if yes, executes <code>DELETE</code>; if no, executes <code>INSERT</code>.</li>
+</ul>
+
+<h2>2.6 routes/application.routes.js (Application Pipeline)</h2>
+<ul>
+  <li><strong>POST /api/applications/:jobId/apply:</strong>
+    <ol>
+      <li>Verifies <code>req.user.role === 'jobseeker'</code>. Employers are prevented from applying.</li>
+      <li>Queries <code>applications WHERE job_id = ? AND seeker_id = ?</code> to prevent duplicate submissions.</li>
+      <li>Inserts into <code>applications</code> with <code>status: 'pending'</code>.</li>
+      <li><strong>Notification Trigger:</strong> Fetches the employer ID of the job and inserts an automated alert into <code>notifications</code>: <em>"Someone applied for [Job Title]"</em>.</li>
+    </ol>
+  </li>
+  <li><strong>GET /api/applications/my-applications:</strong> Fetches all jobs applied for by the logged-in seeker, sorted by <code>applied_at DESC</code>.</li>
+  <li><strong>GET /api/applications/job/:jobId:</strong> Fetches all applicant records for an employer's specific job posting, including resume link, cover letter, and candidate contact info.</li>
+  <li><strong>PUT /api/applications/:id/status:</strong> Updates application status (<code>reviewed</code>, <code>shortlisted</code>, <code>rejected</code>, <code>hired</code>) and generates a notification for the candidate.</li>
+</ul>
+
+<h2>2.7 routes/user.routes.js (Profiles & Dashboard Analytics)</h2>
+<ul>
+  <li><strong>GET /api/users/profile:</strong> Queries <code>users</code> table, detects role, and executes conditional query on <code>seeker_profiles</code> or <code>employer_profiles</code>.</li>
+  <li><strong>PUT /api/users/profile/seeker:</strong> Updates headline, bio, skills, experience, education, LinkedIn, and portfolio URLs.</li>
+  <li><strong>PUT /api/users/profile/employer:</strong> Updates company name, website, logo, industry, size, and company description.</li>
+  <li><strong>GET /api/users/dashboard/stats:</strong> Aggregates live platform metrics:
+    <ul>
+      <li>Seekers: Count of total applications, shortlisted count, and reviewed count.</li>
+      <li>Employers: Count of active jobs, total applications received, and view counts.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1>3. Code-Level Frontend Architecture & Client Logic</h1>
+
+<h2>3.1 src/api/api.js (Axios HTTP Client & Interceptors)</h2>
+<p>
+  Centralizes all HTTP network communication using an Axios instance:
+</p>
+<pre><code>const API = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  withCredentials: true,
+});
+
+// Request Interceptor: Injects Authorization Header
+API.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
+// Response Interceptor: Global 401 Session Handling
+API.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = '/login';
+    }
+    return Promise.reject(error);
+  }
+);</code></pre>
+<p>
+  <strong>Automatic Token Injection:</strong> Every outgoing API call automatically carries the Bearer token without requiring developers to manually write headers in individual components.
+</p>
+
+<h2>3.2 src/context/AuthContext.jsx (Global Authentication State)</h2>
+<p>
+  Encapsulates user authentication in a React Context Provider:
+</p>
+<ul>
+  <li><code>user</code>: Object containing user ID, full name, email, and role. <code>null</code> when unauthenticated.</li>
+  <li><code>loading</code>: Boolean flag preventing premature routing redirects while verifying stored credentials.</li>
+  <li><code>useEffect()</code>: On application mount, reads <code>token</code> and <code>user</code> from <code>localStorage</code>. Dispatches <code>getMe()</code> to verify token validity with the backend.</li>
+  <li><code>loginUser(token, userData)</code>: Persists credentials in <code>localStorage</code> and updates React state.</li>
+  <li><code>logout()</code>: Clears <code>localStorage</code>, resets <code>user</code> to <code>null</code>, and navigates to <code>/login</code>.</li>
+</ul>
+
+<h2>3.3 src/App.jsx (Client Routing & Route Guards)</h2>
+<p>
+  Configures route protection and guarantees the requested user experience:
+</p>
+<pre><code>// Protected Route Guard
+const ProtectedRoute = ({ children, roles }) => {
+  const { user, loading } = useAuth();
+  if (loading) return &lt;div className="loading-screen"&gt;&lt;div className="spinner"&gt;&lt;/div&gt;&lt;/div&gt;;
+  if (!user) return &lt;Navigate to="/login" replace /&gt;;
+  if (roles && !roles.includes(user.role)) return &lt;Navigate to="/" replace /&gt;;
+  return children;
+};
+
+// Public Route Guard (Redirects to Home if already authenticated)
+const PublicRoute = ({ children }) => {
+  const { user, loading } = useAuth();
+  if (loading) return &lt;div className="loading-screen"&gt;&lt;div className="spinner"&gt;&lt;/div&gt;&lt;/div&gt;;
+  if (user) return &lt;Navigate to="/" replace /&gt;;
+  return children;
+};</code></pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Route Path</th>
+      <th>Guard Component</th>
+      <th>Rendered Page</th>
+      <th>Behavior</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>/</code> & <code>/home</code></td>
+      <td><code>ProtectedRoute</code></td>
+      <td><code>&lt;Home /&gt;</code></td>
+      <td>Redirects unauthenticated users to <code>/login</code>. Shows Home once logged in.</td>
+    </tr>
+    <tr>
+      <td><code>/login</code></td>
+      <td><code>PublicRoute</code></td>
+      <td><code>&lt;Login /&gt;</code></td>
+      <td>Shows login form. If already logged in, redirects to <code>/</code>.</td>
+    </tr>
+    <tr>
+      <td><code>/register</code></td>
+      <td><code>PublicRoute</code></td>
+      <td><code>&lt;Register /&gt;</code></td>
+      <td>Dual-role registration form. Redirects to <code>/</code> if logged in.</td>
+    </tr>
+    <tr>
+      <td><code>/jobs</code></td>
+      <td><code>ProtectedRoute</code></td>
+      <td><code>&lt;Jobs /&gt;</code></td>
+      <td>Job catalog with search and filters.</td>
+    </tr>
+    <tr>
+      <td><code>/jobs/:id</code></td>
+      <td><code>ProtectedRoute</code></td>
+      <td><code>&lt;JobDetail /&gt;</code></td>
+      <td>Job description, company overview & application modal.</td>
+    </tr>
+    <tr>
+      <td><code>/dashboard</code></td>
+      <td><code>ProtectedRoute</code></td>
+      <td><code>&lt;Dashboard /&gt;</code></td>
+      <td>Role-based analytics dashboard.</td>
+    </tr>
+    <tr>
+      <td><code>/post-job</code></td>
+      <td><code>ProtectedRoute (employer)</code></td>
+      <td><code>&lt;PostJob /&gt;</code></td>
+      <td>Employer job creation form. Job seekers receive 403 redirect.</td>
+    </tr>
+    <tr>
+      <td><code>/applications</code></td>
+      <td><code>ProtectedRoute</code></td>
+      <td><code>&lt;Applications /&gt;</code></td>
+      <td>Seeker submissions list / Employer applicant review panel.</td>
+    </tr>
+    <tr>
+      <td><code>/profile</code></td>
+      <td><code>ProtectedRoute</code></td>
+      <td><code>&lt;Profile /&gt;</code></td>
+      <td>Profile editing interface.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>4. Database Schema Specifications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Table Name</th>
+      <th>Primary Key</th>
+      <th>Foreign Keys</th>
+      <th>Unique Constraints</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>users</code></td>
+      <td><code>id INT AUTO_INCREMENT</code></td>
+      <td>None</td>
+      <td><code>email UNIQUE</code></td>
+      <td>Core account credentials, hashed password, role enum.</td>
+    </tr>
+    <tr>
+      <td><code>seeker_profiles</code></td>
+      <td><code>id INT AUTO_INCREMENT</code></td>
+      <td><code>user_id &rarr; users(id) ON DELETE CASCADE</code></td>
+      <td>None</td>
+      <td>Job seeker resume, headline, bio, skills, education.</td>
+    </tr>
+    <tr>
+      <td><code>employer_profiles</code></td>
+      <td><code>id INT AUTO_INCREMENT</code></td>
+      <td><code>user_id &rarr; users(id) ON DELETE CASCADE</code></td>
+      <td>None</td>
+      <td>Company name, logo, industry, website, size.</td>
+    </tr>
+    <tr>
+      <td><code>jobs</code></td>
+      <td><code>id INT AUTO_INCREMENT</code></td>
+      <td><code>employer_id &rarr; users(id) ON DELETE CASCADE</code></td>
+      <td>None</td>
+      <td>Job listings, salary bounds, job type, requirements, views.</td>
+    </tr>
+    <tr>
+      <td><code>applications</code></td>
+      <td><code>id INT AUTO_INCREMENT</code></td>
+      <td>
+        <code>job_id &rarr; jobs(id) ON DELETE CASCADE</code><br>
+        <code>seeker_id &rarr; users(id) ON DELETE CASCADE</code>
+      </td>
+      <td><code>UNIQUE KEY (job_id, seeker_id)</code></td>
+      <td>Application submissions, cover letters, status lifecycle.</td>
+    </tr>
+    <tr>
+      <td><code>saved_jobs</code></td>
+      <td><code>id INT AUTO_INCREMENT</code></td>
+      <td>
+        <code>user_id &rarr; users(id) ON DELETE CASCADE</code><br>
+        <code>job_id &rarr; jobs(id) ON DELETE CASCADE</code>
+      </td>
+      <td><code>UNIQUE KEY (user_id, job_id)</code></td>
+      <td>Bookmarked jobs for quick access.</td>
+    </tr>
+    <tr>
+      <td><code>notifications</code></td>
+      <td><code>id INT AUTO_INCREMENT</code></td>
+      <td><code>user_id &rarr; users(id) ON DELETE CASCADE</code></td>
+      <td>None</td>
+      <td>In-app alerts for application submissions & status changes.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>5. End-to-End User Operational Guide (Epdi Use Aakum)</h1>
+
+<h2>5.1 Initial Application Entry</h2>
+<ol>
+  <li>User opens <code>http://localhost:5173/</code> in the browser.</li>
+  <li><code>ProtectedRoute</code> detects that no authentication token exists in <code>localStorage</code>.</li>
+  <li>The user is immediately redirected to <code>http://localhost:5173/login</code>.</li>
+  <li>The clean Login card appears with <em>Email</em>, <em>Password</em>, and a password visibility toggle.</li>
+</ol>
+
+<h2>5.2 New User Registration Flow</h2>
+<ol>
+  <li>Click <strong>"Create Account"</strong> &rarr; Navigates to <code>/register</code>.</li>
+  <li>Choose role card:
+    <ul>
+      <li><strong>Job Seeker:</strong> Standard registration form (Full Name, Email, Password).</li>
+      <li><strong>Employer:</strong> Dynamically displays an additional <strong>Company Name</strong> input field.</li>
+    </ul>
+  </li>
+  <li>Click <strong>"Create Account &rarr;"</strong>.</li>
+  <li>Backend creates user, hashes password, inserts role profile, and issues a JWT token.</li>
+  <li>Client automatically calls <code>loginUser(token, user)</code> and navigates directly to the <strong>Home Page</strong> (<code>/</code>).</li>
+</ol>
+
+<h2>5.3 Job Seeker User Journey</h2>
+<ol>
+  <li><strong>Home Landing Page (<code>/</code>):</strong>
+    <ul>
+      <li>Search for jobs by title, keyword, or company name.</li>
+      <li>Click on popular category tags (Technology, Finance, Design).</li>
+      <li>Click <strong>"Explore Jobs"</strong> to view the full directory.</li>
+    </ul>
+  </li>
+  <li><strong>Job Exploration (<code>/jobs</code>):</strong>
+    <ul>
+      <li>Filter by category dropdown, job type (Full-time, Part-time, Remote, Internship), and location.</li>
+      <li>Click on any job card to navigate to <code>/jobs/:id</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Applying for a Job (<code>/jobs/:id</code>):</strong>
+    <ul>
+      <li>Review requirements, salary range, and company details.</li>
+      <li>Click <strong>"Apply Now"</strong> &rarr; Application modal opens.</li>
+      <li>Enter a tailored cover letter and link to resume.</li>
+      <li>Click <strong>"Submit Application"</strong> &rarr; Application is created with status <code>pending</code>.</li>
+      <li>The hiring employer automatically receives a real-time notification in their dashboard.</li>
+    </ul>
+  </li>
+  <li><strong>Tracking Applications (<code>/applications</code>):</strong>
+    <ul>
+      <li>View real-time status badges: <code>Pending</code> &rarr; <code>Reviewed</code> &rarr; <code>Shortlisted</code> &rarr; <code>Hired</code> (or <code>Rejected</code>).</li>
+    </ul>
+  </li>
+  <li><strong>Profile Building (<code>/profile</code>):</strong>
+    <ul>
+      <li>Update headline, bio, professional skills list, years of experience, LinkedIn, and portfolio link.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2>5.4 Employer User Journey</h2>
+<ol>
+  <li><strong>Posting a Job (<code>/post-job</code>):</strong>
+    <ul>
+      <li>Fill in job title, category, job type (Remote, Full-time, etc.), location, salary min/max, education, experience, description, and requirements.</li>
+      <li>Click <strong>"Publish Job"</strong> &rarr; Job immediately appears in the active job catalog.</li>
+    </ul>
+  </li>
+  <li><strong>Reviewing Applicants (<code>/applications</code>):</strong>
+    <ul>
+      <li>View candidate name, email, phone, applied date, cover letter, and resume link.</li>
+      <li>Change applicant stage using status pills:
+        <span class="badge badge-amber">Reviewed</span>
+        <span class="badge badge-blue">Shortlisted</span>
+        <span class="badge badge-green">Hired</span>
+      </li>
+      <li>Updating status automatically triggers an in-app alert to the candidate.</li>
+    </ul>
+  </li>
+  <li><strong>Dashboard & Metrics (<code>/dashboard</code>):</strong>
+    <ul>
+      <li>Track active postings count, total applicants count, and posting view metrics.</li>
+    </ul>
+  </li>
+</ol>
+
+<h1>6. Setup, Execution & Troubleshooting Guide</h1>
+
+<h2>6.1 Step 1: Start MySQL Database</h2>
+<ol>
+  <li>Open <strong>XAMPP Control Panel</strong> and click <strong>Start</strong> next to MySQL.</li>
+  <li>Open <code>http://localhost/phpmyadmin</code> in browser.</li>
+  <li>Create database: <code>smarthire_db</code>.</li>
+  <li>Import SQL: Copy contents of <code>backend/config/schema.sql</code>, paste into SQL tab, and execute.</li>
+</ol>
+
+<h2>6.2 Step 2: Start Backend Server</h2>
+<p>Open a terminal window:</p>
+<pre><code>cd backend
+npm start</code></pre>
+<p>Console output confirms: <code>🚀 SmartHire Server running on http://localhost:5000</code> and <code>✅ MySQL Connected Successfully!</code>.</p>
+
+<h2>6.3 Step 3: Start Frontend Server</h2>
+<p>Open a second terminal window:</p>
+<pre><code>cd frontend
+npm run dev</code></pre>
+<p>Console output confirms: <code>➜ Local: http://localhost:5173/</code>.</p>
+
+<h2>6.4 Troubleshooting Common Issues</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 35%;">Error / Symptom</th>
+      <th style="width: 25%;">Root Cause</th>
+      <th style="width: 40%;">Resolution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>"Registration failed" Toast</strong></td>
+      <td>Backend server is down or MySQL is not running.</td>
+      <td>Start XAMPP MySQL and run <code>npm start</code> in <code>backend/</code> folder. Inspect browser console (F12) for detailed error logs.</td>
+    </tr>
+    <tr>
+      <td><strong>"All fields are required"</strong></td>
+      <td>Missing form input.</td>
+      <td>Ensure Full Name, Email, Password (&ge; 6 characters), and Company Name (if Employer) are entered.</td>
+    </tr>
+    <tr>
+      <td><strong>401 Unauthorized / Immediate Logout</strong></td>
+      <td>JWT token expired after 7 days.</td>
+      <td>The response interceptor in <code>api.js</code> automatically clears local storage and redirects to <code>/login</code> for re-authentication.</td>
+    </tr>
+    <tr>
+      <td><strong>CORS Error in Browser</strong></td>
+      <td>Origin mismatch.</td>
+      <td>Verify <code>origin: 'http://localhost:5173'</code> in <code>backend/server.js</code> matches the exact frontend Vite port.</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
